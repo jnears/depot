@@ -1,5 +1,7 @@
 class StoreController < ApplicationController
 	include SessionCounter #inlcude the concern session_counter.rb 
+	include CurrentCart
+	before_action :set_cart
 	
   def index
   	@products = Product.order(:title)
